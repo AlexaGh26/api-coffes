@@ -1,19 +1,5 @@
 import Image from "next/image";
 
-const getDataCoffes = async () => {
-  const response = await fetch(
-    "http://localhost:3000/api/coffes"
-  );
-  const data = await response.json();
-  return (
-    <ul>
-      {data.map((item: any) => (
-        <li key={item.id}>{item.title}</li>
-      ))}
-    </ul>
-  );
-};
-
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -26,7 +12,6 @@ export default function Home() {
           height={20}
           priority
         />
-          {getDataCoffes()}
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
             To get started, edit the{" "}
